@@ -1,20 +1,24 @@
-<!DOCTYPE html>
 <?php
-$cookie_name = "hasib";
-$cookie_value = "hasib";
-setcookie($cookie_name, $cookie_value, time() + (30), "/"); // 86400 = 1 day
-?>
-<html>
-<body>
 
-<?php
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie named '" . $cookie_name . "' is not set!";
-} else {
-    echo "Cookie '" . $cookie_name . "' is set!<br>";
-    echo "Value is: " . $_COOKIE[$cookie_name];
-}
+/*session start ();*/
+
+if(!isset($_COOKIE["username"]))
+ { 
+	 header ("Location:index.php");
+
+ }
+
 ?>
+
+
+
+<html>
+<head>
+	<title>Dashboard</title>
+</head>
+<body>
+	<h1>ID: <?php echo $_COOKIE["username"]; ?></h1>
+
 
 </body>
 </html>
